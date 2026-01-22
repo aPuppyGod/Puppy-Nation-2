@@ -1,1 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Map Wall Canvas</title>
+  <link rel="stylesheet" href="/static/styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">Map Wall</div>
 
+    <div class="toolbar">
+      <select id="tool">
+        <option value="pan">Pan</option>
+        <option value="pen">Pen</option>
+        <option value="eraser">Eraser</option>
+        <option value="rect">Rectangle</option>
+        <option value="circle">Circle</option>
+        <option value="line">Line</option>
+        <option value="fill">Fill (bucket)</option>
+      </select>
+
+      <label class="mini">
+        Size
+        <input id="size" type="range" min="1" max="50" value="6" />
+      </label>
+
+      <input id="color" type="color" value="#ffffff" title="Color" />
+
+      <label class="mini">
+        Detail layer
+        <select id="detail">
+          <option value="continent">Continent</option>
+          <option value="country" selected>Country</option>
+          <option value="city">City</option>
+        </select>
+      </label>
+
+      <button id="undo">Undo</button>
+      <button id="redo">Redo</button>
+      <button id="clear">Clear</button>
+
+      <div class="spacer"></div>
+
+      <button id="adminBtn">Admin: Off</button>
+      <button id="saveBtn" disabled>Save</button>
+      <span id="status" class="status">Viewer mode</span>
+    </div>
+  </header>
+
+  <main class="stage">
+    <canvas id="canvas"></canvas>
+  </main>
+
+  <footer class="footer">
+    <div>
+      Zoom: mouse wheel / trackpad. Pan: choose Pan tool or hold Space.
+    </div>
+  </footer>
+
+  <script src="/static/app.js"></script>
+</body>
+</html>
