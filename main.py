@@ -11,7 +11,7 @@ APP_DIR = os.path.dirname(os.path.abspath(__file__))
 STATIC_DIR = os.path.join(APP_DIR, "static")
 
 ADMIN_PASSWORD = os.environ.get("ADMIN_PASSWORD", "change-me")  # set on Render
-DB_PATH = os.environ.get("DB_PATH", os.path.join(APP_DIR, "data.db"))
+DB_PATH = os.environ.get("DB_PATH", os.path.join("/tmp", "data.db"))
 
 app = FastAPI()
 app.mount("/static", StaticFiles(directory=STATIC_DIR), name="static")
